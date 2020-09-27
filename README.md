@@ -10,7 +10,7 @@ This is a sample application that can be used as a cockkpit for the SAP Cloud Co
 The application starts, stops cloud connector. exposes logs.
 
 
-![Demo](./docs/Capture.png)
+![Demo](./docs/Capture.PNG)
 
 ## Requirements
 
