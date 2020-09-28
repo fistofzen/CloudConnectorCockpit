@@ -212,6 +212,7 @@ public class Gui implements ActionListener {
             return;
         }
         
+        
         trayIcon.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 frame.setVisible(true);
@@ -219,11 +220,13 @@ public class Gui implements ActionListener {
             }
         });
         
+        
         aboutItem.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 JOptionPane.showMessageDialog(null,
                         "SAP Cloud Connector is a tool that uses standart scc exe file for start and stop operations. Dev fistofzen . ");
             }
+            
         });
         
         startMenuItem.addActionListener(this);
