@@ -19,6 +19,7 @@ public class HeaderPanelUI extends JPanel{
 	/**
 	 * Header panel for status message
 	 */
+	
 	private static final long serialVersionUID = 1L;
 	private JLabel labeStatus;
 	JPanel paneHeader;
