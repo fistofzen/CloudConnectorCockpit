@@ -46,8 +46,9 @@ public class Gui implements ActionListener {
     private JButton logButton;
     private AbstractFactory factory;
     private HeaderPanelUI paneHeader;
-    private MenuItem cb1;
-    private MenuItem cb2;
+    private MenuItem startMenuItem;
+    private MenuItem stopMenuItem;
+    private MenuItem browserMenuItem;
 
 
 	final JLabel label = new JLabel(labelPrefix + "0    ");
@@ -180,20 +181,23 @@ public class Gui implements ActionListener {
         
         // Create a popup menu components
         MenuItem aboutItem = new MenuItem("About");
-        cb1 = new MenuItem("Start Connector");
-        cb2 = new MenuItem("Stop Connector");
+        startMenuItem = new MenuItem("Start Connector");
+        stopMenuItem = new MenuItem("Stop Connector");
+        browserMenuItem = new MenuItem("Open Admin Browser");
         Menu displayMenu = new Menu("Display");
         MenuItem errorItem = new MenuItem("Error");
         MenuItem warningItem = new MenuItem("Warning");
         MenuItem infoItem = new MenuItem("Info");
         MenuItem noneItem = new MenuItem("None");
         MenuItem exitItem = new MenuItem("Exit");
-        
+         
         //Add components to popup menu
         popup.add(aboutItem);
         popup.addSeparator();
-        popup.add(cb1);
-        popup.add(cb2);
+        popup.add(startMenuItem);
+        popup.add(stopMenuItem);
+        popup.addSeparator();
+        popup.add(browserMenuItem);
         popup.addSeparator();
         popup.add(displayMenu);
         displayMenu.add(errorItem);
@@ -222,8 +226,8 @@ public class Gui implements ActionListener {
             }
         });
         
-        cb1.addActionListener(this);
-        cb2.addActionListener(this);
+        startMenuItem.addActionListener(this);
+        stopMenuItem.addActionListener(this);
         
         
         
@@ -273,9 +277,9 @@ public class Gui implements ActionListener {
     
     public void actionPerformed(ActionEvent e) {
     	boolean status = false;
-        if (e.getSource() == this.startButton || e.getSource() == this.cb1 ) {
+        if (e.getSource() == this.startButton || e.getSource() == this.startMenuItem ) {
         	status = factory.getCommand(CommandType.START_FACTORY).executeCommand(this);
-		}else if(e.getSource() == this.stopButton || e.getSource() == this.cb2) {
+		}else if(e.getSource() == this.stopButton || e.getSource() == this.stopMenuItem) {
         	status = factory.getCommand(CommandType.STOP_FACTORY).executeCommand(this);
 		}else if(e.getSource() == this.logButton) {
 			
